@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Slider</title>
+    <style>
+        html,body{
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            perspective: 550px;
+        }
+        .slide{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-origin: bottom center;
+        }
+        .slide div{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .slide:nth-of-type(2){
+            animation: slideRight 20s 16s ease-out infinite;
+        }
+        .slide:nth-of-type(3){
+            animation: slideLeft 20s 8s ease-in-out infinite;
+        }
+        .slide:nth-of-type(4){
+            animation: slideBottom 20s 4s ease-in-out infinite;
+        }
+        .slide:nth-of-type(5){
+            animation: slideBottom 20s ease-in-out infinite;
+        }
+        @keyframes slideBottom{
+            0%,5%{
+                transform: rotateX(0);
+                z-index: 1;
+            }
+            10%{
+                transform: rotateX(90);
+            }
+            13%{
+                z-index: 1;
+                transform: rotateX(90deg) translateY(100%);
+            }
+            50%{
+                z-index: -1;
+                transform: rotateX(90deg) translateY(100%);
+            }
+            53%,80%{
+                z-index: -1;
+                transform: rotateX(0) translateY(0);
+            }
+        }
+
+        .slide:nth-of-type(3){
+            transform-origin: left center;
+        }
+
+        @keyframes slideLeft {
+                0%,5%{
+                    transform: rotateY(0);
+                    z-index: 1;
+                }
+                10%{
+                    transform: rotateY(90deg);
+                }
+                13%{
+                    transform: rotateY(90deg) translateX(-100%);
+                    z-index: 1;
+                }
+                50%{
+                    transform: rotateY(90deg) translateX(-100%);
+                    z-index: -1;
+                }
+                53%,80%{
+                    transform: rotateY(0deg) translateX(0);
+                    z-index: -1;
+                }
+                81%,100%{
+                    z-index: 0;
+                }
+        }
+        .slide:nth-of-type(2){
+            transform-origin: right center;
+        }
+        @keyframes slideRight {
+                0%,5%{
+                    transform: rotateY(0);
+                    z-index: 1;
+                }
+                10%{
+                    transform: rotateY(-90deg);
+                }
+                13%{
+                    transform: rotateY(-90deg) translateX(100%);
+                    z-index: 1;
+                }
+                50%{
+                    transform: rotateY(-90deg) translateX(100%);
+                    z-index: -1;
+                }
+                53%,80%{
+                    transform: rotateY(0) translateX(0);
+                    z-index: -1;
+                }
+                81%,100%{
+                    z-index: 0;
+                }
+        }
+        .slide:nth-of-type(1){
+            transform-origin: top center;
+        }
+        @keyframes slideTop {
+                0%,5%{
+                    transform: rotateX(0);
+                    z-index: 1;
+                }
+                10%{
+                    transform: rotateX(-90deg);
+                }
+                13%{
+                    transform: rotateX(-90deg) translateY(-150%);
+                    z-index: 1;
+                }
+                50%{
+                    transform: rotateX(-90deg) translateY(-150%);
+                    z-index: -1;
+                }
+                53%,80%{
+                    transform: rotateX(0) translateY(0);
+                    z-index: -1;
+                }
+                81%,100%{
+                    z-index: 0;
+                }
+        }
+
+        /* .slide:nth-last-of-type(1) div{
+            background: url(3.jpg);
+            background-size: cover;
+        } */
+        .slide:nth-last-of-type(2) div{
+            background: url(1.jpg);
+            background-size: cover;
+        }
+        .slide:nth-last-of-type(2) div{
+            background: url(2.jpg);
+            background-size: cover;
+        }
+        .slide:nth-last-of-type(3) div{
+            background: url(4.jpg);
+            background-size: cover;
+        }
+        .slide:nth-last-of-type(4) div{
+            background: url(3.jpg) center center;
+            background-size: cover;
+        }
+        .slide:nth-last-of-type(5) div{
+            background: url(5.jpg) center center;
+            background-size: cover;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div></div>
+    </div>
+    <div class="slide">
+        <div></div>
+    </div>
+    <div class="slide">
+        <div></div>
+    </div>
+    <div class="slide">
+        <div></div>
+    </div>
+    <div class="slide">
+        <div></div>
+    </div>
+    <div class="slide">
+        <div></div>
+    </div>
+</body>
+</html>
